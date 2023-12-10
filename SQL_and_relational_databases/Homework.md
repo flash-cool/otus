@@ -45,7 +45,8 @@ x(2 rows)
 x
 xpostgres=*#
 
-:tw-2757:<span style="color:red">`Не вижу, так как транзакция в первой сессии не завершина (нет грязного чтения)`</span>
+<span style="color:red">`Не вижу, так как транзакция в первой сессии не завершина (нет грязного чтения)`</span>
+
 6.<span style="color:blue">*Завершить первую транзакцию - commit;*</span>
 >postgres=*# commit;                                                                                                   x
 COMMIT                                                                                                                x
@@ -62,7 +63,8 @@ x(3 rows)
 x
 xpostgres=*#
 
-:tw-2705:<span style="color:green">`Вижу, так как транзакция в первой сессии завершина и данные в базу записаны`</span>
+<span style="color:green">`Вижу, так как транзакция в первой сессии завершина и данные в базу записаны`</span>
+
 8.<span style="color:blue">*Завершите транзакцию во второй сессии*</span>
 >postgres=*# commit;                                                                                                   x
 COMMIT 
@@ -87,7 +89,8 @@ x(3 rows)
 x
 xpostgres=*#
 
-:tw-2757:<span style="color:red">`Не вижу, так как транзакция в первой сессии не завершина`</span>
+<span style="color:red">`Не вижу, так как транзакция в первой сессии не завершина`</span>
+
 12.<span style="color:blue">*Завершить первую транзакцию - commit;*</span>
 >postgres=*# commit;                                                                                                   x
 COMMIT                                                                                                                x
@@ -104,7 +107,8 @@ x(3 rows)
 x
 xpostgres=*#
 
-:tw-2757:<span style="color:red">`Не вижу, так как транзакция в второй сессии не завершина (на данном уровни изоляции каждый работает со своим снимком базы)`</span>
+<span style="color:red">`Не вижу, так как транзакция в второй сессии не завершина (на данном уровни изоляции каждый работает со своим снимком базы)`</span>
+
 14.<span style="color:blue">*Завершить вторую транзакцию*</span>
 >postgres=*# commit;                                                                                                   x
 COMMIT                                                                                                                x
@@ -120,4 +124,4 @@ x  3 | supe       | men
 x  4 | halk       | hogan
 x(4 rows)
 
-:tw-2705:<span style="color:green">`Вижу , так как обе транзакции в сессиях были заверншины`</span>
+<span style="color:green">`Вижу , так как обе транзакции в сессиях были заверншины`</span>
