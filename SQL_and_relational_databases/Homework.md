@@ -139,4 +139,4 @@ x  3 | supe       | men
 x  4 | halk       | hogan
 x(4 rows)
 ```
-:white_check_mark:<span style="color:green">`Вижу , так как обе транзакции в сессиях были заверншины`</span>
+:white_check_mark:<span style="color:green">`Вижу , так как обе транзакции в сессиях были завершины`</span>
