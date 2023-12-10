@@ -8,14 +8,22 @@ Ver Cluster Port Status Owner    Data directory              Log file
 >postgres=# \set AUTOCOMMIT OFF
 
 2.<span style="color:blue">*Сделать в первой сессии новую таблицу и наполнить ее данными create table persons(id serial, first_name text, second_name text); insert into persons(first_name, second_name) values('ivan', 'ivanov'); insert into persons(first_name, second_name) values('petr', 'petrov'); commit;*</span>
->postgres=# create table persons(id serial, first_name text, second_name text);                                        x
-CREATE TABLE                                                                                                          x
-postgres=*# insert into persons(first_name, second_name) values('ivan', 'ivanov');                                    x
-INSERT 0 1                                                                                                            x
-postgres=*# insert into persons(first_name, second_name) values('petr', 'petrov');                                    x
-INSERT 0 1                                                                                                            x
-postgres=*# commit;                                                                                                   x
-COMMIT                                                                                                                x
+>postgres=# create table persons(id serial, first_name text, second_name text);
+
+CREATE TABLE
+
+postgres=*# insert into persons(first_name, second_name) values('ivan', 'ivanov');
+
+INSERT 0 1
+
+postgres=*# insert into persons(first_name, second_name) values('petr', 'petrov');
+
+INSERT 0 1
+
+postgres=*# commit;
+
+COMMIT
+
 postgres=# 
 
 3.<span style="color:blue">*Посмотреть текущий уровень изоляции: show transaction isolation level*</span>
