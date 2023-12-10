@@ -5,7 +5,7 @@ root@AMS:/tmp# pg_lsclusters
 Ver Cluster Port Status Owner    Data directory              Log file
 15  main    5432 online postgres /var/lib/postgresql/15/main /var/log/postgresql/postgresql-15-main.log
 ```
-2.<span style="color:blue">Выключить auto commit</span>
+2.<span style="color:blue">*Выключить auto commit*</span>
 >postgres=# \set AUTOCOMMIT OFF
 
 2.<span style="color:blue">*Сделать в первой сессии новую таблицу и наполнить ее данными create table persons(id serial, first_name text, second_name text); insert into persons(first_name, second_name) values('ivan', 'ivanov'); insert into persons(first_name, second_name) values('petr', 'petrov'); commit;*</span>
