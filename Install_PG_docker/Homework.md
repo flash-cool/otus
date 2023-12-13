@@ -87,7 +87,7 @@ postgres=# select * from testpg;
 ```
 6.***Подключится к контейнеру с сервером с ноутбука/компьютера извне***
 ```
-[root@pol-testpg-04 ~]# psql -p 5432 -U postgres -h 77.83.246.134 -d postgres -W
+[root@pol-testpg-04 ~]# psql -p 5432 -U postgres -h 172.16.**.*** -d postgres -W
 Пароль:
 psql (11.12, сервер 15.5 (Debian 15.5-1.pgdg120+1))
 ПРЕДУПРЕЖДЕНИЕ: psql имеет базовую версию 13, а сервер - 15.
@@ -189,7 +189,9 @@ postgres=#
 
 >docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500
 >>link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
+
 >>inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+
 >>valid_lft forever preferred_lft forever
 
 ***Решить проблему помогло изменение подсети Docker на другую, которая не пересекалась с моей.***:white_check_mark:
