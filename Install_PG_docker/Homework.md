@@ -87,10 +87,10 @@ postgres=# select * from testpg;
 ```
 6.***Подключится к контейнеру с сервером с ноутбука/компьютера извне***
 ```
-[root@msk-srv1c-04 ~]# psql -p 5432 -U postgres -h 77.83.246.134 -d postgres -W
+[root@pol-testpg-04 ~]# psql -p 5432 -U postgres -h 77.83.246.134 -d postgres -W
 Пароль:
 psql (11.12, сервер 15.5 (Debian 15.5-1.pgdg120+1))
-ПРЕДУПРЕЖДЕНИЕ: psql имеет базовую версию 11, а сервер - 15.
+ПРЕДУПРЕЖДЕНИЕ: psql имеет базовую версию 13, а сервер - 15.
                 Часть функций psql может не работать.
 Введите "help", чтобы получить справку.
 
@@ -181,17 +181,16 @@ postgres=#
 
 postgres=#
 ```
-10.***Столкнулся с проблемой что, смог подключится из локальной сети к машине с Docker PostgreSQL (разворачивалась всё в локальной сети предприятия).***:heavy_exclamation_mark:
+10.**Комментарий**
+
+:heavy_exclamation_mark:***Столкнулся с проблемой, не получилось подключится из локальной сети к машине с Docker PostgreSQL (разворачивалась всё в локальной сети предприятия).***:heavy_exclamation_mark:
 
 ***Проблема оказалась в том что в локальной сети у моеё машины был IP 172.17.10.14/24 и эта подсеть пересеклась с сетью развёрнутого Docker.***
 
 >docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500
-
-> >link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
-
-> >inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
-
-> >valid_lft forever preferred_lft forever
+>>link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
+>>inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+>>valid_lft forever preferred_lft forever
 
 ***Решить проблему помогло изменение подсети Docker на другую, которая не пересекалась с моей.***:white_check_mark:
 
