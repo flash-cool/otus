@@ -182,12 +182,16 @@ postgres=#
 postgres=#
 ```
 10.***Столкнулся с проблемой что, смог подключится из локальной сети к машине с Docker PostgreSQL (разворачивалась всё в локальной сети предприятия).***:heavy_exclamation_mark:
+
 ***Проблема оказалась в том что в локальной сети у моеё машины был IP 172.17.10.14/24 и эта подсеть пересеклась с сетью развёрнутого Docker.***
 
->3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default
->    link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
->    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
->       valid_lft forever preferred_lft forever
+>docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu
+
+    >link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
+
+    >inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+
+       >valid_lft forever preferred_lft forever
 
 ***Решить проблему помогло изменение подсети Docker на другую, которая не пересекалась с моей.***:white_check_mark:
 
