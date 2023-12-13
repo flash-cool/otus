@@ -185,13 +185,13 @@ postgres=#
 
 ***Проблема оказалась в том что в локальной сети у моеё машины был IP 172.17.10.14/24 и эта подсеть пересеклась с сетью развёрнутого Docker.***
 
->docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu
+>docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500
 
-    >link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
+> >link/ether 02:42:19:ed:38:70 brd ff:ff:ff:ff:ff:ff
 
-    >inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+> >inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
 
-       >valid_lft forever preferred_lft forever
+> >valid_lft forever preferred_lft forever
 
 ***Решить проблему помогло изменение подсети Docker на другую, которая не пересекалась с моей.***:white_check_mark:
 
