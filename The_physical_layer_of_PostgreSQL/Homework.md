@@ -108,6 +108,7 @@ UUID=97008cec-61f2-4923-8958-9deccb258ebf none            swap    sw            
 root@pg:~# reboot
 login as: root
 root@172.**.**.***'s password:
+
 Linux pg 6.1.0-16-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.67-1 (2023-12-12) x86_64
 
 The programs included with the Debian GNU/Linux system are free software;
@@ -117,6 +118,7 @@ individual files in /usr/share/doc/*/copyright.
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Sun Dec 24 05:53:10 2023 from 10.**.**.***
+
 root@pg:~# lsblk
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda      8:0    0   50G  0 disk
@@ -163,7 +165,7 @@ root@pg:~# pg_lsclusters
 Ver Cluster Port Status Owner    Data directory     Log file
 15  main    5432 online postgres /mnt/pgdir/15/main /var/log/postgresql/postgresql-15-main.log
 ```
-:white_check_mark:`Получилось т.к. не поменяли параметр отвечающий за путь к каталогу с данными PostgreSQL.`
+:white_check_mark:`Получилось т.к. поменяли параметр отвечающий за путь к каталогу с данными PostgreSQL.`
 
 11.***Зайдите через через psql и проверьте содержимое ранее созданной таблицы***
 ```bash
@@ -179,8 +181,7 @@ postgres=# select * from my;
 (1 row)
 
 ```
-12.***Задание со звездочкой***
-***Небыло возможности перенести диск физически, по этому попытался примонтировать его удалённо через SSHFS***
+12.***Задание со звездочкой. Небыло возможности перенести диск физически, по этому попытался примонтировать его удалённо через SSHFS***
 ```bash
 root@pg1:~# pg_lsclusters
 Ver Cluster Port Status Owner    Data directory              Log file
@@ -198,6 +199,7 @@ root@pg1:~# sudo apt install sshfs
 root@pg1:~# sudo sshfs postgres@172.**.**.***:/mnt/pgdir/15/main/ /var/lib/postgresql/15/main
 sudo: unable to resolve host pg1: Name or service not known
 postgres@172.**.**.***'s password:
+
 root@pg1:~# pg_ctlcluster 15 main start
 Job for postgresql@15-main.service failed because the service did not take the steps required by its unit configuration.
 See "systemctl status postgresql@15-main.service" and "journalctl -xeu postgresql@15-main.service" for details.
@@ -217,6 +219,7 @@ root@pg1:~# ls -lah /var/lib/postgresql/15/main/
 root@pg1:~# sudo sshfs -o allow_other postgres@172.16.2.218:/mnt/pgdir/15/main/ /var/lib/postgresql/15/main
 sudo: unable to resolve host pg1: Name or service not known
 postgres@172.**.**.***'s password:
+
 root@pg1:~# pg_ctlcluster 15 main start
 root@pg1:~# sudo -u postgres psql
 sudo: unable to resolve host pg1: Name or service not known
