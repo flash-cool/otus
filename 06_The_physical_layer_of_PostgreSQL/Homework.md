@@ -118,7 +118,8 @@ individual files in /usr/share/doc/*/copyright.
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Sun Dec 24 05:53:10 2023 from 10.**.**.***
-
+```
+```bash
 root@pg:~# lsblk
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda      8:0    0   50G  0 disk
@@ -199,7 +200,8 @@ root@pg1:~# sudo apt install sshfs
 root@pg1:~# sudo sshfs postgres@172.**.**.***:/mnt/pgdir/15/main/ /var/lib/postgresql/15/main
 sudo: unable to resolve host pg1: Name or service not known
 postgres@172.**.**.***'s password:
-
+```
+```bash
 root@pg1:~# pg_ctlcluster 15 main start
 Job for postgresql@15-main.service failed because the service did not take the steps required by its unit configuration.
 See "systemctl status postgresql@15-main.service" and "journalctl -xeu postgresql@15-main.service" for details.
@@ -216,10 +218,11 @@ root@pg1:~# systemctl status postgresql@15-main.service
 ```bash
 root@pg1:~# fusermount -u /var/lib/postgresql/15/main
 root@pg1:~# ls -lah /var/lib/postgresql/15/main/
-root@pg1:~# sudo sshfs -o allow_other postgres@172.16.2.218:/mnt/pgdir/15/main/ /var/lib/postgresql/15/main
+root@pg1:~# sudo sshfs -o allow_other postgres@172.**.**.***:/mnt/pgdir/15/main/ /var/lib/postgresql/15/main
 sudo: unable to resolve host pg1: Name or service not known
 postgres@172.**.**.***'s password:
-
+```
+```bash
 root@pg1:~# pg_ctlcluster 15 main start
 root@pg1:~# sudo -u postgres psql
 sudo: unable to resolve host pg1: Name or service not known

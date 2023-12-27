@@ -1,7 +1,9 @@
-#OTUS PostgreSQL для администраторов баз данных и разработчиков
+#OTUS PostgreSQL для администраторов баз данных и разработчиков, homework.
 ___
-1.[SQL и реляционные СУБД. Введение в PostgreSQL](https://github.com/flash-cool/otus/blob/main/SQL_and_relational_databases/Homework.md "SQL и реляционные СУБД. Введение в PostgreSQL")
+1.[SQL и реляционные СУБД. Введение в PostgreSQL](https://github.com/flash-cool/otus/blob/main/02_SQL_and_relational_databases/Homework.md "SQL и реляционные СУБД. Введение в PostgreSQL")
 
-2.[Установка PostgreSQL](https://github.com/flash-cool/otus/blob/main/Install_PG_docker/Homework.md "Установка PostgreSQL")
+2.[Установка PostgreSQL](https://github.com/flash-cool/otus/blob/main/03_Install_PG_docker/Homework.md "Установка PostgreSQL")
 
-3.[Физический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/The_physical_layer_of_PostgreSQL/Homework.md "Физический уровень PostgreSQL")
+3.[Физический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/06_The_physical_layer_of_PostgreSQL/Homework.md "Физический уровень PostgreSQL")
+
+3.[Логический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/07_The_logical_level_of_PostgreSQL/Homework.md "Логический уровень PostgreSQL")
