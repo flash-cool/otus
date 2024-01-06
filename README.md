@@ -6,4 +6,6 @@ ___
 
 3.[Физический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/06_The_physical_layer_of_PostgreSQL/Homework.md "Физический уровень PostgreSQL")
 
-3.[Логический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/07_The_logical_level_of_PostgreSQL/Homework.md "Логический уровень PostgreSQL")
+4.[Логический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/07_The_logical_level_of_PostgreSQL/Homework.md "Логический уровень PostgreSQL")
+
+5.[MVCC vacuum и autovacuum](https://github.com/flash-cool/otus/blob/main/08_MVCC_vacuum&autovacuum/Homework.md "MVCC vacuum и autovacuum")

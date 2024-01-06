@@ -6,7 +6,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 sudo apt-get update
 ```
 **Установится 13 версия**
-`sudo apt-get -y install postgresql`
+>sudo apt-get -y install postgresql`
 
 **Если 13 поверх 12**
 ```bash
@@ -27,23 +27,23 @@ sudo apt update && sudo apt upgrade -y -q && sudo sh -c 'echo "deb http://apt.po
 sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y -q && sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt -y install postgresql-14
 ```
 **Посмотрим, что кластер стартовал**
-`pg_lsclusters`
+>pg_lsclusters
 
 **Посмотрим новый метод шифрования пароля**
-`sudo cat /etc/postgresql/14/main/pg_hba.conf`
+>sudo cat /etc/postgresql/14/main/pg_hba.conf
 
 **Cтарый**
-`sudo cat /etc/postgresql/13/main/pg_hba.conf`
+>sudo cat /etc/postgresql/13/main/pg_hba.conf
 
 **Удалим все**
 >sudo pg_ctlcluster 12 main stop
 >sudo pg_dropcluster 12 main
 
 **Создадим 14 версии под пользователем postgres**
-`sudo -u postgres pg_createcluster 14 main`
-`pg_lsclusters`
-`sudo pg_ctlcluster 14 main start`
-`sudo -u postgres psql`
+>sudo -u postgres pg_createcluster 14 main
+>pg_lsclusters
+>sudo pg_ctlcluster 14 main start
+>sudo -u postgres psql
 >sudo su postgres
 >psql
 
@@ -90,7 +90,8 @@ BEGIN;
 SELECT * FROM test;
 ```
 **2 console**
-`sudo -u postgres psql`
+>sudo -u postgres psql
+
 ```sql
 \c iso
 BEGIN;
@@ -148,11 +149,10 @@ SELECT sum(amount) FROM testS WHERE i = 2;
 INSERT INTO testS VALUES (1,300);
 ```
 **1 console**
-`COMMIT;`
+>COMMIT;
 
 **2 console**
-`COMMIT;`
-
+>COMMIT;
 
 **То же самое на RR**
 **1 console**
@@ -168,13 +168,14 @@ SELECT sum(amount) FROM testS WHERE i = 2;
 INSERT INTO testS VALUES (1,300);
 ```
 **1 console**
-`COMMIT;`
+>COMMIT;
+
 **2 console**
-`COMMIT;`
+>COMMIT;
 
 
 **Как выйти из psql Postgres до 10 версии?**
-```sql
+```bash
 \q
 exit
 ```
@@ -202,10 +203,14 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1E9377A2BA9EF27F
 sudo apt-get update with optional sudo apt-get dist-upgrade
 ```
 
-#Ссылки из второго занятия
+***Ссылки из второго занятия***
 ___
 1.[Практическое владение языком SQL](https://sql-ex.ru/ "Практическое владение языком SQL")
+
 2.[Simple SQL Queries](https://pgexercises.com/questions/basic/ "Simple SQL Queries")
+
 3.[Что такое транзакция](https://habr.com/ru/articles/537594/ "Что такое транзакция")
+
 4.[К чему может привести ослабление уровня изоляции транзакций в базах данных](https://habr.com/ru/companies/otus/articles/501294/ "К чему может привести ослабление уровня изоляции транзакций в базах данных")
+
 5.[Уровни изоляции транзакций с примерами на PostgreSQL](https://habr.com/ru/articles/317884/ "Уровни изоляции транзакций с примерами на PostgreSQL")
