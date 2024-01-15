@@ -9,3 +9,5 @@ ___
 4.[Логический уровень PostgreSQL](https://github.com/flash-cool/otus/blob/main/07_The_logical_level_of_PostgreSQL/Homework.md "Логический уровень PostgreSQL")
 
 5.[MVCC vacuum и autovacuum](https://github.com/flash-cool/otus/blob/main/08_MVCC_vacuum&autovacuum/Homework.md "MVCC vacuum и autovacuum")
+
+6.[Журналы](https://github.com/flash-cool/otus/blob/main/09_Logging_WAL/Homework.md "Журналы")
