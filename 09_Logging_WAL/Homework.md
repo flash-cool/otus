@@ -224,6 +224,8 @@ ERROR:  invalid page in block 0 of relation base/16384/16394
 >Пишут что этот параметр (ignore_checksum_failure) позволяет игнорировать ошибку checksum, но у меня ничего не поменялось.
 
 ```bash
+bench=# SET zero_damaged_pages = on;
+SET
 bench=# VACUUM FULL VERBOSE ANALYZE what;
 INFO:  vacuuming "public.what"
 INFO:  "public.what": found 0 removable, 0 nonremovable row versions in 0 pages
