@@ -37,16 +37,19 @@ sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y -q && sudo
 
 **Удалим все**
 >sudo pg_ctlcluster 12 main stop
+
 >sudo pg_dropcluster 12 main
 
 **Создадим 14 версии под пользователем postgres**
->sudo -u postgres pg_createcluster 14 main
->pg_lsclusters
->sudo pg_ctlcluster 14 main start
->sudo -u postgres psql
->sudo su postgres
->psql
-
+```bash
+sudo -u postgres
+pg_createcluster 14 main
+pg_lsclusters
+sudo pg_ctlcluster 14 main start
+sudo -u postgres psql
+sudo su postgres
+psql
+```
 **Создадим табличку для тестов**
 **https://www.postgresql.org/docs/14/sql-set-transaction.html**
 ```bash

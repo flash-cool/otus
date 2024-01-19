@@ -11,3 +11,7 @@ ___
 5.[MVCC vacuum и autovacuum](https://github.com/flash-cool/otus/blob/main/08_MVCC_vacuum&autovacuum/Homework.md "MVCC vacuum и autovacuum")
 
 6.[Журналы](https://github.com/flash-cool/otus/blob/main/09_Logging_WAL/Homework.md "Журналы")
+
+6.[Блокировки](https://github.com/flash-cool/otus/blob/main/10_Locks/Homework.md "Блокировки")
+
+6.[Настройка PostgreSQL](https://github.com/flash-cool/otus/blob/main/11_Customization/Homework.md "Настройка PostgreSQL")
