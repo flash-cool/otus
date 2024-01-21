@@ -12,6 +12,6 @@ ___
 
 6.[Журналы](https://github.com/flash-cool/otus/blob/main/09_Logging_WAL/Homework.md "Журналы")
 
-6.[Блокировки](https://github.com/flash-cool/otus/blob/main/10_Locks/Homework.md "Блокировки")
+7.[Блокировки](https://github.com/flash-cool/otus/blob/main/10_Locks/Homework.md "Блокировки")
 
-6.[Настройка PostgreSQL](https://github.com/flash-cool/otus/blob/main/11_Customization/Homework.md "Настройка PostgreSQL")
+8.[Настройка PostgreSQL](https://github.com/flash-cool/otus/blob/main/11_Customization/Homework.md "Настройка PostgreSQL")

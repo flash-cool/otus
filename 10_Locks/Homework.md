@@ -96,22 +96,22 @@ bench=*#
 ```
 5.***Пришлите список блокировок и объясните, что значит каждая.***
 ```
---relation | what     | RowExclusiveLock | t       | 28664 | {}
+-- relation | what     | RowExclusiveLock | t       | 28664 | {}
 Блокировка строки при update
 
---relation | what     | RowExclusiveLock | t       | 28775 | {28664}
+-- relation | what     | RowExclusiveLock | t       | 28775 | {28664}
 Это из второй консоли, ждёт окончания update из первой консоли
 Блокировка строки при update
 
---tuple    | what     | ExclusiveLock    | t       | 28775 | {28664}
+-- tuple    | what     | ExclusiveLock    | t       | 28775 | {28664}
 Это из второй консоли, ждёт окончания update из первой консоли
 Исключительная блокировка на версию строки
 
---relation | what     | RowExclusiveLock | t       | 29021 | {28775}
+-- relation | what     | RowExclusiveLock | t       | 29021 | {28775}
 Это из третьей консоли, ждёт окончания update из второй консоли
 Блокировка строки при update
 
---tuple    | what     | ExclusiveLock    | f       | 29021 | {28775}
+-- tuple    | what     | ExclusiveLock    | f       | 29021 | {28775}
 Это из третьей консоли, ждёт окончания update из второй консоли
 Исключительная блокировка на версию строки
 
