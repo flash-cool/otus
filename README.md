@@ -15,3 +15,7 @@ ___
 7.[Блокировки](https://github.com/flash-cool/otus/blob/main/10_Locks/Homework.md "Блокировки")
 
 8.[Настройка PostgreSQL](https://github.com/flash-cool/otus/blob/main/11_Customization/Homework.md "Настройка PostgreSQL")
+
+9.[Резервное копирование и восстановление](https://github.com/flash-cool/otus/blob/main/12_BackUp&Restore/Homework.md "Резервное копирование и восстановление")
+
+10.[Виды и устройство репликации в PostgreSQL. Практика применения](https://github.com/flash-cool/otus/blob/main/13_Replication_in_PostgreSQL/Homework.md "Виды и устройство репликации в PostgreSQL. Практика применения")
