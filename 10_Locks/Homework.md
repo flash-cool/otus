@@ -184,4 +184,44 @@ CONTEXT:  while updating tuple (0,7) in relation "what"
 ```
 8.***Могут ли две транзакции, выполняющие единственную команду UPDATE одной и той же таблицы (без where), заблокировать друг друга?***
 
-:heavy_exclamation_mark:>Думаю что нет. Точнее не знаю как.
+:heavy_exclamation_mark:`Не знаю как.`
+
+>Попытка сделать
+
+```sql
+-- 1 console. Стар транзакции
+postgres=# BEGIN;
+BEGIN
+
+postgres=*# UPDATE what SET name = roman;
+UPDATE 3
+
+-- 2 console. Стар транзакции
+postgres=# BEGIN;
+BEGIN
+
+postgres=*# UPDATE what SET name = lol;
+
+
+-- 1 console. Коммит
+postgres=*# COMMIT;
+COMMIT
+
+-- 2 console. Пошла дальше. Коммит
+UPDATE 3
+
+postgres=*# COMMIT;
+COMMIT
+
+-- Смотрим таблицу what
+postgres=# SELECT * FROM what;
+ num | name
+-----+-------
+   1 | lol
+   2 | lol
+(3 rows)
+```
+
+white_check_mark:`Значит да.`
+
+✨Magic ✨
