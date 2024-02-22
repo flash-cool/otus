@@ -1,4 +1,4 @@
-#OTUS PostgreSQL для администраторов баз данных и разработчиков, homework.
+# OTUS PostgreSQL для администраторов баз данных и разработчиков, homework.
 ___
 1.[SQL и реляционные СУБД. Введение в PostgreSQL](https://github.com/flash-cool/otus/blob/main/02_SQL_and_relational_databases/Homework.md "SQL и реляционные СУБД. Введение в PostgreSQL")
 
@@ -19,3 +19,5 @@ ___
 9.[Резервное копирование и восстановление](https://github.com/flash-cool/otus/blob/main/12_BackUp&Restore/Homework.md "Резервное копирование и восстановление")
 
 10.[Виды и устройство репликации в PostgreSQL. Практика применения](https://github.com/flash-cool/otus/blob/main/13_Replication_in_PostgreSQL/Homework.md "Виды и устройство репликации в PostgreSQL. Практика применения")
+
+11.[Виды индексов. Работа с индексами и оптимизация запросов](https://github.com/flash-cool/otus/blob/main/15_Index/Homework.md "Виды индексов. Работа с индексами и оптимизация запросов")

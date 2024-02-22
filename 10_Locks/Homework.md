@@ -194,7 +194,7 @@ postgres=# BEGIN;
 BEGIN
 
 postgres=*# UPDATE what SET name = roman;
-UPDATE 3
+UPDATE 2
 
 -- 2 console. Стар транзакции
 postgres=# BEGIN;
@@ -208,7 +208,7 @@ postgres=*# COMMIT;
 COMMIT
 
 -- 2 console. Пошла дальше. Коммит
-UPDATE 3
+UPDATE 2
 
 postgres=*# COMMIT;
 COMMIT
@@ -219,9 +219,9 @@ postgres=# SELECT * FROM what;
 -----+-------
    1 | lol
    2 | lol
-(3 rows)
+(2 rows)
 ```
 
-white_check_mark:`Значит да.`
+:white_check_mark:`Значит да.`
 
 ✨Magic ✨
