@@ -21,3 +21,7 @@ ___
 10.[Виды и устройство репликации в PostgreSQL. Практика применения](https://github.com/flash-cool/otus/blob/main/13_Replication_in_PostgreSQL/Homework.md "Виды и устройство репликации в PostgreSQL. Практика применения")
 
 11.[Виды индексов. Работа с индексами и оптимизация запросов](https://github.com/flash-cool/otus/blob/main/15_Index/Homework.md "Виды индексов. Работа с индексами и оптимизация запросов")
+
+12.[Сбор и использование статистики](https://github.com/flash-cool/otus/blob/main/18_Statistics/Homework.md "Сбор и использование статистики")
+
+13.[Секционирование](https://github.com/flash-cool/otus/blob/main/19_Partitioning/Homework.md "Секционирование")
