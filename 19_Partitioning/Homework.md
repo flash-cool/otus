@@ -52,6 +52,8 @@ select * from ticket_flights where fare_conditions = 'Comfort';
 
 demo=# insert into ticket_flights_part_eco
 select * from ticket_flights where fare_conditions = 'Economy';
+
+demo=# insert into ticket_flights_part select * from ticket_flights;
 ```
 6.***Посмотрим данные в наших партициях***
 ```sql
