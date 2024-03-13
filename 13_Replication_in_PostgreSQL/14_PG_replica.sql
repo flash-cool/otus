@@ -85,7 +85,7 @@ show synchronous_commit;
 и проконсультироваться с опытным специалистом.
 */
 
---Проверим состояние репликации:
+-- Проверим состояние репликации:
 -- на мастере
 select * from pg_stat_replication \gx
 select * from pg_current_wal_lsn();
@@ -143,7 +143,7 @@ sudo pg_ctlcluster 14 main start
 sudo -u postgres psql -p 5433
 select version();
 
---Cоздадим подписку на втором экземпляре (создадим подписку к БД по Порту с Юзером и Паролем и Копированием данных = false)
+-- Cоздадим подписку на втором экземпляре (создадим подписку к БД по Порту с Юзером и Паролем и Копированием данных = false)
 create subscription test_sub
 connection 'host=localhost port=5432 user=postgres password=otus123 dbname=otus'
 publication test_pub with (copy_data = true);

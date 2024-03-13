@@ -467,8 +467,17 @@ conninfo              | user=postgres password=********
 >Самое сложное было во всём этом не запутаться (что сделать не удалось).
 
 ```
--- Перевод в состояние мастера
+-- Перевод в состояние мастера.
 sudo pg_ctlcluster 15 main promote
+
+-- Проверить статус репликации.
+SELECT * FROM pg_stat_replication \gx
+
+-- Посмотреть список слотов репликации.
+SELECT * FROM pg_replication_slots;
+
+-- Удаление слота репликации "replica".
+select pg_drop_replication_slot('replica);
 ```
 
 ✨Magic ✨
