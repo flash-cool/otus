@@ -41,7 +41,7 @@ SELECT do_text();
 CREATE TABLE the_tab (nmb integer);
 INSERT INTO the_tab (nmb) VALUES (1), (2), (3);
 
---1 "PostgreSQL-style"
+-- 1 "PostgreSQL-style"
 CREATE FUNCTION fnc_cnt_old()
 RETURNS integer
 AS
@@ -54,7 +54,7 @@ DROP TABLE the_tab;
 
 SELECT fnc_cnt_old();
 
---2 "ANSI-style"
+-- 2 "ANSI-style"
 CREATE FUNCTION fnc_cnt_new()
 RETURNS integer
 LANGUAGE sql
@@ -95,7 +95,7 @@ SELECT fnc_multistatement();
 -------------------------------------------------------------
 
 -- #2 функция с параметрами
---- простые примеры
+-- простые примеры
 CREATE OR REPLACE FUNCTION add(integer, integer)    -- не лучший стиль
 RETURNS integer
 AS 'SELECT $1 + $2;'
@@ -333,7 +333,7 @@ SELECT * FROM get_last_transact (2);
 SELECT transaction_id, transact_value FROM get_last_transact (5) WHERE transact_value < 0 ORDER BY transaction_id;
 SELECT get_last_transact (2);
 
---ещё один способ вернуть отношение:
+-- ещё один способ вернуть отношение:
 CREATE OR REPLACE FUNCTION get_transacts_by_customer (p_customer_id integer)
 RETURNS TABLE (transaction_id bigint, transact_value numeric, transact_ts timestamp with time zone)
 AS
@@ -923,7 +923,7 @@ LANGUAGE plpgsql;
 SELECT * FROM get_all_foo();
 SELECT * FROM foo;
 
---Пример использования RETURN QUERY:
+-- Пример использования RETURN QUERY:
 CREATE or replace FUNCTION get_available_flightid(date) RETURNS SETOF integer AS
 $BODY$
 BEGIN
@@ -1089,7 +1089,7 @@ $$;
 
 CALL triple(4);
 
---вызов анонимной процедуры dBeaver  в окне output - ctrl+shift+o
+-- вызов анонимной процедуры dBeaver  в окне output - ctrl+shift+o
 DO $$
 DECLARE myvar int := 5;
 BEGIN

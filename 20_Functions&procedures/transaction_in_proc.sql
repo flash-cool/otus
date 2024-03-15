@@ -50,7 +50,7 @@ CALL  try_trans2();
 
 SELECT * FROM tx;
 
---НО!
+-- НО!
 CREATE OR REPLACE FUNCTION try_trans_func()
 RETURNS void
 AS
@@ -60,4 +60,4 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-SELECT * FROM try_trans_func();     --не работает по понятным причинам (как закомитить транзакцию посреди селекта?)
+SELECT * FROM try_trans_func();     -- не работает по понятным причинам (как закомитить транзакцию посреди селекта?)

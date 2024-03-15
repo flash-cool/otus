@@ -1,4 +1,3 @@
-
 show track_activities;
 show track_counts;
 show track_functions;
@@ -26,13 +25,13 @@ where datname = 'demo';
 
 select * from pg_class;
 
-select * --relpages, reltuples
+select * -- relpages, reltuples
 from pg_class
 where relname = 'flights'; --65664
 
 explain
 select *
-from bookings.flights; --Seq Scan on flights  (cost=0.00..1448.64 rows=65664 width=63)
+from bookings.flights; -- Seq Scan on flights  (cost=0.00..1448.64 rows=65664 width=63)
 
 select relkind, count(*)
 from pg_class
@@ -65,7 +64,7 @@ select most_common_vals,array_length(most_common_vals,1),n_distinct
 from pg_stats
 where tablename= 'flights';
 
---Посмотрим корелляцию
+-- Посмотрим корелляцию
 create table test1 as
     select *
 from generate_series(1, 10000);
@@ -239,11 +238,11 @@ where relname = 'flights';  66168,58
 
 show enable_indexscan;
 
---set enable_indexscan = 'on';
+-- set enable_indexscan = 'on';
 explain analyse
 select flight_id from bookings.flights where flight_id < 1000;
 
---неиспользуемые индексы
+-- неиспользуемые индексы
 select s.schemaname,
        s.relname as tablename,
        s.indexrelname as indexname,

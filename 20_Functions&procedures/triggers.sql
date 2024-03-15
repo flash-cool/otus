@@ -176,11 +176,11 @@ DEFERRABLE INITIALLY DEFERRED
 FOR EACH ROW
 EXECUTE PROCEDURE tf_check_budget();
 
---LISTEN overbudget;
+-- LISTEN overbudget;
 
 UPDATE employee SET salary = 17000 WHERE emp_name = 'John';
 -- UPDATE pract_functions.employee SET salary = 17000 WHERE emp_name = 'John';
---UNLISTEN *;
+-- UNLISTEN *;
 
 SELECT * FROM employee;
 
@@ -474,8 +474,8 @@ CREATE TABLE actions_log
     action_time timestamp with time zone DEFAULT now()      -- ???
 );
 
---REVOKE USAGE ON SCHEMA pract_functions FROM mary;
---REVOKE USAGE ON SCHEMA pract_functions FROM john;
+-- REVOKE USAGE ON SCHEMA pract_functions FROM mary;
+-- REVOKE USAGE ON SCHEMA pract_functions FROM john;
 DROP USER IF EXISTS mary;
 DROP USER IF EXISTS john;
 CREATE USER mary LOGIN SUPERUSER PASSWORD '12345678';
